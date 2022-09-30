@@ -1,0 +1,647 @@
+<pre>truffle compile
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle console
+truffle(development)&gt; todoList = await TodoList.deployed()
+<font color="#555753">undefined</font>
+truffle(development)&gt; todoList.task(1)
+evalmachine.&lt;anonymous&gt;:0
+todoList.task(1)
+         ^
+
+Uncaught TypeError: todoList.task is not a function
+    at evalmachine.&lt;anonymous&gt;:0:10
+<font color="#555753">    at Script.runInContext (node:vm:141:12)</font>
+    at runScript (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/packages/truffle-core/lib/console.js:199:1)
+    at Console.interpret (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/packages/truffle-core/lib/console.js:213:1)
+    at ReplManager.interpret (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/packages/truffle-core/lib/repl.js:118:1)
+<font color="#555753">    at bound (node:domain:416:15)</font>
+<font color="#555753">    at REPLServer.runBound [as eval] (node:domain:427:12)</font>
+<font color="#555753">    at REPLServer.onLine (node:repl:844:10)</font>
+<font color="#555753">    at REPLServer.emit (node:events:369:20)</font>
+<font color="#555753">    at REPLServer.emit (node:domain:470:12)</font>
+truffle(development)&gt; todoList = await TodoList.deployed()
+<font color="#555753">undefined</font>
+truffle(development)&gt; task = await todoList.tasks(1)
+Uncaught Error: Returned values aren&apos;t valid, did it run Out of Gas?
+    at XMLHttpRequest._onHttpResponseEnd (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+    at XMLHttpRequest._setReadyState (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+    at XMLHttpRequestEventTarget.dispatchEvent (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+    at XMLHttpRequest.request.onreadystatechange (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+    at /home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+    at /home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/web3-core-requestmanager/src/index.js:147:1
+    at sendTxCallback (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/web3-eth-contract/~/web3-core-method/src/index.js:473:1)
+    at Method.formatOutput (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/web3-eth-contract/~/web3-core-method/src/index.js:163:1)
+    at Method.outputFormatter (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/web3-eth-contract/src/index.js:818:1)
+    at Contract._decodeMethodReturn (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/web3-eth-contract/src/index.js:465:1)
+    at ABICoder.decodeParameters (/home/mathangi/.nvm/versions/node/v15.14.0/lib/node_modules/<u style="text-decoration-style:single">truffle</u>/build/webpack:/~/web3-eth-abi/src/index.js:226:1)
+truffle(development)&gt; 
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+truffle(development)&gt; 
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle migrate
+⚠️  Important ⚠️
+If you&apos;re using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+&gt; Network name:    &apos;development&apos;
+&gt; Network id:      5777
+&gt; Block gas limit: 6721975
+
+
+1_initial_migration.js
+======================
+
+   Deploying &apos;Migrations&apos;
+   ----------------------
+   &gt; transaction hash:    0xb6f842e085a1e0adfad9fea64324e7e3fbd7820393d1fe8812535ace8c5481c6
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x3697575dfBee3243FFa05C61C9dd729F4a4D035f
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.99586798
+   &gt; gas used:            206601
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00413202 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00413202 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Replacing &apos;TodoList&apos;
+   --------------------
+   &gt; transaction hash:    0xbecc7baa90cfb0b92c3f1fc18d2dcda26f496bf287f22d41e38377b76e71d896
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x6589d7BD07CEA4f1F18f6e3A263605A802257B11
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.98918454
+   &gt; gas used:            334172
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00668344 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00668344 ETH
+
+
+Summary
+=======
+&gt; Total deployments:   2
+&gt; Final cost:          0.01081546 ETH
+
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle console
+truffle(development)&gt; todoList = await TodoList.deployed()
+<font color="#555753">undefined</font>
+truffle(development)&gt; task = await todoList.tasks(1)
+<font color="#555753">undefined</font>
+truffle(development)&gt; task
+Result {
+  <font color="#4E9A06">&apos;0&apos;</font>: BN {
+    negative: <font color="#C4A000">0</font>,
+    words: [ <font color="#C4A000">1</font>, <font color="#555753">&lt;1 empty item&gt;</font> ],
+    length: <font color="#C4A000">1</font>,
+    red: <b>null</b>
+  },
+  <font color="#4E9A06">&apos;1&apos;</font>: <font color="#4E9A06">&apos;Check out todo.com&apos;</font>,
+  <font color="#4E9A06">&apos;2&apos;</font>: <font color="#C4A000">false</font>,
+  id: BN {
+    negative: <font color="#C4A000">0</font>,
+    words: [ <font color="#C4A000">1</font>, <font color="#555753">&lt;1 empty item&gt;</font> ],
+    length: <font color="#C4A000">1</font>,
+    red: <b>null</b>
+  },
+  content: <font color="#4E9A06">&apos;Check out todo.com&apos;</font>,
+  completed: <font color="#C4A000">false</font>
+}
+truffle(development)&gt; 
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+truffle(development)&gt; 
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle console
+truffle(development)&gt; todoList = await TodoList.deployed()
+<font color="#555753">undefined</font>
+truffle(development)&gt; todoList
+TruffleContract {
+  constructor: [Function: TruffleContract] {
+    _constructorMethods: {
+      setProvider: <font color="#06989A">[Function: setProvider]</font>,
+      new: <font color="#06989A">[Function: new]</font>,
+      at: <font color="#06989A">[Function: at]</font>,
+      deployed: <font color="#06989A">[Function: deployed]</font>,
+      defaults: <font color="#06989A">[Function: defaults]</font>,
+      hasNetwork: <font color="#06989A">[Function: hasNetwork]</font>,
+      isDeployed: <font color="#06989A">[Function: isDeployed]</font>,
+      detectNetwork: <font color="#06989A">[Function: detectNetwork]</font>,
+      setNetwork: <font color="#06989A">[Function: setNetwork]</font>,
+      setWallet: <font color="#06989A">[Function: setWallet]</font>,
+      resetAddress: <font color="#06989A">[Function: resetAddress]</font>,
+      link: <font color="#06989A">[Function: link]</font>,
+      clone: <font color="#06989A">[Function: clone]</font>,
+      addProp: <font color="#06989A">[Function: addProp]</font>,
+      toJSON: <font color="#06989A">[Function: toJSON]</font>,
+      decodeLogs: <font color="#06989A">[Function: decodeLogs]</font>
+    },
+    _properties: {
+      contract_name: <font color="#06989A">[Object]</font>,
+      contractName: <font color="#06989A">[Object]</font>,
+      gasMultiplier: <font color="#06989A">[Object]</font>,
+      timeoutBlocks: <font color="#06989A">[Object]</font>,
+      autoGas: <font color="#06989A">[Object]</font>,
+      numberFormat: <font color="#06989A">[Object]</font>,
+      abi: <font color="#06989A">[Object]</font>,
+      network: <font color="#06989A">[Function: network]</font>,
+      networks: <font color="#06989A">[Function: networks]</font>,
+      address: <font color="#06989A">[Object]</font>,
+      transactionHash: <font color="#06989A">[Object]</font>,
+      links: <font color="#06989A">[Function: links]</font>,
+      events: <font color="#06989A">[Function: events]</font>,
+      binary: <font color="#06989A">[Function: binary]</font>,
+      deployedBinary: <font color="#06989A">[Function: deployedBinary]</font>,
+      unlinked_binary: <font color="#06989A">[Object]</font>,
+      bytecode: <font color="#06989A">[Object]</font>,
+      deployedBytecode: <font color="#06989A">[Object]</font>,
+      sourceMap: <font color="#06989A">[Object]</font>,
+      deployedSourceMap: <font color="#06989A">[Object]</font>,
+      source: <font color="#06989A">[Object]</font>,
+      sourcePath: <font color="#06989A">[Object]</font>,
+      legacyAST: <font color="#06989A">[Object]</font>,
+      ast: <font color="#06989A">[Object]</font>,
+      compiler: <font color="#06989A">[Object]</font>,
+      schema_version: <font color="#06989A">[Function: schema_version]</font>,
+      schemaVersion: <font color="#06989A">[Function: schemaVersion]</font>,
+      updated_at: <font color="#06989A">[Function: updated_at]</font>,
+      updatedAt: <font color="#06989A">[Function: updatedAt]</font>,
+      userdoc: <font color="#06989A">[Function: userdoc]</font>,
+      devdoc: <font color="#06989A">[Function: devdoc]</font>
+    },
+    _property_values: {},
+    _json: {
+      contractName: <font color="#4E9A06">&apos;TodoList&apos;</font>,
+      abi: <font color="#06989A">[Array]</font>,
+      bytecode: <font color="#4E9A06">&apos;0x60806040526000805534801561001457600080fd5b5060408051808201909152601281527f436865636b206f757420746f646f2e636f6d0000000000000000000000000000602082015261005b90640100000000610060810204565b610167565b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936100ad939085019291909101906100cc565b50604091909101516002909101805460ff191691151591909117905550565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061010d57805160ff191683800117855561013a565b8280016001018555821561013a579182015b8281111561013a57825182559160200191906001019061011f565b5061014692915061014a565b5090565b61016491905b808211156101465760008155600101610150565b90565b6103d3806101766000396000f3fe6080604052600436106100565763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663111002aa811461005b5780638d97767214610110578063b6cb58a5146101c4575b600080fd5b34801561006757600080fd5b5061010e6004803603602081101561007e57600080fd5b81019060208101813564010000000081111561009957600080fd5b8201836020820111156100ab57600080fd5b803590602001918460018302840111640100000000831117156100cd57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101eb945050505050565b005b34801561011c57600080fd5b5061013a6004803603602081101561013357600080fd5b5035610257565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b8381101561018757818101518382015260200161016f565b50505050905090810190601f1680156101b45780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b3480156101d057600080fd5b506101d9610306565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936102389390850192919091019061030c565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102f35780601f106102c8576101008083540402835291602001916102f3565b820191906000526020600020905b8154815290600101906020018083116102d657829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061034d57805160ff191683800117855561037a565b8280016001018555821561037a579182015b8281111561037a57825182559160200191906001019061035f565b5061038692915061038a565b5090565b6103a491905b808211156103865760008155600101610390565b9056fea165627a7a7230582011c7b1152fa453d63fe1eb27eaed17ac5cd1dcb61f45694426c9be79f5e997a60029&apos;</font>,
+      deployedBytecode: <font color="#4E9A06">&apos;0x6080604052600436106100565763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663111002aa811461005b5780638d97767214610110578063b6cb58a5146101c4575b600080fd5b34801561006757600080fd5b5061010e6004803603602081101561007e57600080fd5b81019060208101813564010000000081111561009957600080fd5b8201836020820111156100ab57600080fd5b803590602001918460018302840111640100000000831117156100cd57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101eb945050505050565b005b34801561011c57600080fd5b5061013a6004803603602081101561013357600080fd5b5035610257565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b8381101561018757818101518382015260200161016f565b50505050905090810190601f1680156101b45780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b3480156101d057600080fd5b506101d9610306565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936102389390850192919091019061030c565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102f35780601f106102c8576101008083540402835291602001916102f3565b820191906000526020600020905b8154815290600101906020018083116102d657829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061034d57805160ff191683800117855561037a565b8280016001018555821561037a579182015b8281111561037a57825182559160200191906001019061035f565b5061038692915061038a565b5090565b6103a491905b808211156103865760008155600101610390565b9056fea165627a7a7230582011c7b1152fa453d63fe1eb27eaed17ac5cd1dcb61f45694426c9be79f5e997a60029&apos;</font>,
+      sourceMap: <font color="#4E9A06">&apos;25:376:1:-;;;71:1;47:25;;188:72;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;219:32:1;;;;;;;;;;;;;;;;;;;:10;;;;:32;:::i;:::-;25:376;;267:131;324:9;:12;;;;;;;;;361:32;;;;;;;;;;;;;;;;;;;;;;;;342:16;;;;;;;;;;:51;;;;;;;;:16;;:51;;;;;;;;;;;;:::i;:::-;-1:-1:-1;342:51:1;;;;;;;;;;;;-1:-1:-1;;342:51:1;;;;;;;;;;-1:-1:-1;267:131:1:o;25:376::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:376:1;;;-1:-1:-1;25:376:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;&apos;</font>,
+      deployedSourceMap: <font color="#4E9A06">&apos;25:376:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;267:131;;8:9:-1;5:2;;;30:1;27;20:12;5:2;267:131:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;267:131:1;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;267:131:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;267:131:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;267:131:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;267:131:1;;-1:-1:-1;267:131:1;;-1:-1:-1;;;;;267:131:1;;;77:34;;8:9:-1;5:2;;;30:1;27;20:12;5:2;77:34:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;77:34:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;77:34:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;47:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;47:25:1;;;;;;;;;;;;;;;;;;;;267:131;324:9;:12;;;;;;;;;361:32;;;;;;;;;;;;;;;;;;;;;;;;342:16;;;;;;;;;;:51;;;;;;;;:16;;:51;;;;;;;;;;;;:::i;:::-;-1:-1:-1;342:51:1;;;;;;;;;;;;-1:-1:-1;;342:51:1;;;;;;;;;;-1:-1:-1;267:131:1:o;77:34::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;77:34:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;77:34:1;;;;;;;-1:-1:-1;;77:34:1;;;:::o;47:25::-;;;;:::o;25:376::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:376:1;;;-1:-1:-1;25:376:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o&apos;</font>,
+      source: <font color="#4E9A06">&apos;pragma solidity ^0.5.0;\n&apos;</font> +
+        <font color="#4E9A06">&apos;\n&apos;</font> +
+        <font color="#4E9A06">&apos;contract TodoList {\n&apos;</font> +
+        <font color="#4E9A06">&apos;  uint public taskCount = 0;\n&apos;</font> +
+        <font color="#4E9A06">&apos;   mapping(uint =&gt; Task) public tasks;\n&apos;</font> +
+        <font color="#4E9A06">&apos;\n&apos;</font> +
+        <font color="#4E9A06">&apos;  struct Task {\n&apos;</font> +
+        <font color="#4E9A06">&apos;    uint id;\n&apos;</font> +
+        <font color="#4E9A06">&apos;    string content;\n&apos;</font> +
+        <font color="#4E9A06">&apos;    bool completed;\n&apos;</font> +
+        <font color="#4E9A06">&apos;  }\n&apos;</font> +
+        <font color="#4E9A06">&apos; constructor() public {\n&apos;</font> +
+        <font color="#4E9A06">&apos;        createTask(&quot;Check out todo.com&quot;);\n&apos;</font> +
+        <font color="#4E9A06">&apos;      }\n&apos;</font> +
+        <font color="#4E9A06">&apos;\n&apos;</font> +
+        <font color="#4E9A06">&apos; \n&apos;</font> +
+        <font color="#4E9A06">&apos;\n&apos;</font> +
+        <font color="#4E9A06">&apos;  function createTask(string memory _content) public {\n&apos;</font> +
+        <font color="#4E9A06">&apos;    taskCount ++;\n&apos;</font> +
+        <font color="#4E9A06">&apos;    tasks[taskCount] = Task(taskCount, _content, false);\n&apos;</font> +
+        <font color="#4E9A06">&apos;  }\n&apos;</font> +
+        <font color="#4E9A06">&apos;\n&apos;</font> +
+        <font color="#4E9A06">&apos;}&apos;</font>,
+      sourcePath: <font color="#4E9A06">&apos;/home/mathangi/eth-todolist/contracts/TodoList.sol&apos;</font>,
+      ast: <font color="#06989A">[Object]</font>,
+      legacyAST: <font color="#06989A">[Object]</font>,
+      compiler: <font color="#06989A">[Object]</font>,
+      networks: <font color="#06989A">[Object]</font>,
+      schemaVersion: <font color="#4E9A06">&apos;3.0.1&apos;</font>,
+      updatedAt: <font color="#4E9A06">&apos;2022-09-30T09:21:02.232Z&apos;</font>,
+      devdoc: <font color="#06989A">[Object]</font>,
+      userdoc: <font color="#06989A">[Object]</font>
+    },
+    setProvider: <font color="#06989A">[Function: bound setProvider]</font>,
+    new: [Function: bound new] {
+      estimateGas: <font color="#06989A">[Function: bound estimateDeployment]</font>
+    },
+    at: <font color="#06989A">[Function: bound at]</font>,
+    deployed: <font color="#06989A">[Function: bound deployed]</font>,
+    defaults: <font color="#06989A">[Function: bound defaults]</font>,
+    hasNetwork: <font color="#06989A">[Function: bound hasNetwork]</font>,
+    isDeployed: <font color="#06989A">[Function: bound isDeployed]</font>,
+    detectNetwork: <font color="#06989A">[Function: bound detectNetwork]</font>,
+    setNetwork: <font color="#06989A">[Function: bound setNetwork]</font>,
+    setWallet: <font color="#06989A">[Function: bound setWallet]</font>,
+    resetAddress: <font color="#06989A">[Function: bound resetAddress]</font>,
+    link: <font color="#06989A">[Function: bound link]</font>,
+    clone: <font color="#06989A">[Function: bound clone]</font>,
+    addProp: <font color="#06989A">[Function: bound addProp]</font>,
+    toJSON: <font color="#06989A">[Function: bound toJSON]</font>,
+    decodeLogs: <font color="#06989A">[Function: bound decodeLogs]</font>,
+    web3: Web3 {
+      currentProvider: <font color="#06989A">[Getter/Setter]</font>,
+      _requestManager: <font color="#06989A">[RequestManager]</font>,
+      givenProvider: <b>null</b>,
+      providers: <font color="#06989A">[Object]</font>,
+      _provider: <font color="#06989A">[HttpProvider]</font>,
+      setProvider: <font color="#06989A">[Function (anonymous)]</font>,
+      BatchRequest: <font color="#06989A">[Function: bound Batch]</font>,
+      extend: <font color="#06989A">[Function]</font>,
+      version: <font color="#4E9A06">&apos;1.0.0-beta.37&apos;</font>,
+      utils: <font color="#06989A">[Object]</font>,
+      eth: <font color="#06989A">[Eth]</font>,
+      shh: <font color="#06989A">[Shh]</font>,
+      bzz: <font color="#06989A">[Bzz]</font>
+    },
+    class_defaults: {
+      from: <font color="#4E9A06">&apos;0xefb4255184B92D157d88A9e2030EFC7562C435b6&apos;</font>,
+      gas: <font color="#C4A000">6721975</font>,
+      gasPrice: <font color="#C4A000">20000000000</font>
+    },
+    currentProvider: HttpProvider {
+      host: <font color="#4E9A06">&apos;http://127.0.0.1:7545&apos;</font>,
+      httpAgent: <font color="#06989A">[Agent]</font>,
+      timeout: <font color="#C4A000">0</font>,
+      headers: <font color="#555753">undefined</font>,
+      connected: <font color="#C4A000">true</font>,
+      send: <font color="#06989A">[Function (anonymous)]</font>,
+      _alreadyWrapped: <font color="#C4A000">true</font>
+    },
+    network_id: <font color="#4E9A06">&apos;5777&apos;</font>
+  },
+  methods: {
+    <font color="#4E9A06">&apos;tasks(uint256)&apos;</font>: [Function (anonymous)] {
+      call: <font color="#06989A">[Function (anonymous)]</font>,
+      sendTransaction: <font color="#06989A">[Function (anonymous)]</font>,
+      estimateGas: <font color="#06989A">[Function (anonymous)]</font>,
+      request: <font color="#06989A">[Function (anonymous)]</font>
+    },
+    <font color="#4E9A06">&apos;taskCount()&apos;</font>: [Function (anonymous)] {
+      call: <font color="#06989A">[Function (anonymous)]</font>,
+      sendTransaction: <font color="#06989A">[Function (anonymous)]</font>,
+      estimateGas: <font color="#06989A">[Function (anonymous)]</font>,
+      request: <font color="#06989A">[Function (anonymous)]</font>
+    },
+    <font color="#4E9A06">&apos;createTask(string)&apos;</font>: [Function (anonymous)] {
+      call: <font color="#06989A">[Function (anonymous)]</font>,
+      sendTransaction: <font color="#06989A">[Function (anonymous)]</font>,
+      estimateGas: <font color="#06989A">[Function (anonymous)]</font>,
+      request: <font color="#06989A">[Function (anonymous)]</font>
+    }
+  },
+  abi: [
+    {
+      constant: <font color="#C4A000">true</font>,
+      inputs: <font color="#06989A">[Array]</font>,
+      name: <font color="#4E9A06">&apos;tasks&apos;</font>,
+      outputs: <font color="#06989A">[Array]</font>,
+      payable: <font color="#C4A000">false</font>,
+      stateMutability: <font color="#4E9A06">&apos;view&apos;</font>,
+      type: <font color="#4E9A06">&apos;function&apos;</font>,
+      signature: <font color="#4E9A06">&apos;0x8d977672&apos;</font>
+    },
+    {
+      constant: <font color="#C4A000">true</font>,
+      inputs: [],
+      name: <font color="#4E9A06">&apos;taskCount&apos;</font>,
+      outputs: <font color="#06989A">[Array]</font>,
+      payable: <font color="#C4A000">false</font>,
+      stateMutability: <font color="#4E9A06">&apos;view&apos;</font>,
+      type: <font color="#4E9A06">&apos;function&apos;</font>,
+      signature: <font color="#4E9A06">&apos;0xb6cb58a5&apos;</font>
+    },
+    {
+      inputs: [],
+      payable: <font color="#C4A000">false</font>,
+      stateMutability: <font color="#4E9A06">&apos;nonpayable&apos;</font>,
+      type: <font color="#4E9A06">&apos;constructor&apos;</font>,
+      signature: <font color="#4E9A06">&apos;constructor&apos;</font>,
+      constant: <font color="#555753">undefined</font>
+    },
+    {
+      constant: <font color="#C4A000">false</font>,
+      inputs: <font color="#06989A">[Array]</font>,
+      name: <font color="#4E9A06">&apos;createTask&apos;</font>,
+      outputs: [],
+      payable: <font color="#C4A000">false</font>,
+      stateMutability: <font color="#4E9A06">&apos;nonpayable&apos;</font>,
+      type: <font color="#4E9A06">&apos;function&apos;</font>,
+      signature: <font color="#4E9A06">&apos;0x111002aa&apos;</font>
+    }
+  ],
+  address: <font color="#4E9A06">&apos;0x6589d7BD07CEA4f1F18f6e3A263605A802257B11&apos;</font>,
+  transactionHash: <font color="#555753">undefined</font>,
+  contract: Contract {
+    currentProvider: <font color="#06989A">[Getter/Setter]</font>,
+    _requestManager: RequestManager {
+      provider: <font color="#06989A">[HttpProvider]</font>,
+      providers: <font color="#06989A">[Object]</font>,
+      subscriptions: {}
+    },
+    givenProvider: <b>null</b>,
+    providers: {
+      WebsocketProvider: <font color="#06989A">[Function: WebsocketProvider]</font>,
+      HttpProvider: <font color="#06989A">[Function: HttpProvider]</font>,
+      IpcProvider: <font color="#06989A">[Function: IpcProvider]</font>
+    },
+    _provider: HttpProvider {
+      host: <font color="#4E9A06">&apos;http://127.0.0.1:7545&apos;</font>,
+      httpAgent: <font color="#06989A">[Agent]</font>,
+      timeout: <font color="#C4A000">0</font>,
+      headers: <font color="#555753">undefined</font>,
+      connected: <font color="#C4A000">true</font>,
+      send: <font color="#06989A">[Function (anonymous)]</font>,
+      _alreadyWrapped: <font color="#C4A000">true</font>
+    },
+    setProvider: <font color="#06989A">[Function (anonymous)]</font>,
+    BatchRequest: <font color="#06989A">[Function: bound Batch]</font>,
+    extend: [Function: ex] {
+      formatters: <font color="#06989A">[Object]</font>,
+      utils: <font color="#06989A">[Object]</font>,
+      Method: <font color="#06989A">[Function: Method]</font>
+    },
+    clearSubscriptions: <font color="#06989A">[Function (anonymous)]</font>,
+    options: { address: <font color="#06989A">[Getter/Setter]</font>, jsonInterface: <font color="#06989A">[Getter/Setter]</font> },
+    defaultAccount: <font color="#06989A">[Getter/Setter]</font>,
+    defaultBlock: <font color="#06989A">[Getter/Setter]</font>,
+    methods: {
+      tasks: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      <font color="#4E9A06">&apos;0x8d977672&apos;</font>: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      <font color="#4E9A06">&apos;tasks(uint256)&apos;</font>: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      taskCount: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      <font color="#4E9A06">&apos;0xb6cb58a5&apos;</font>: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      <font color="#4E9A06">&apos;taskCount()&apos;</font>: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      createTask: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      <font color="#4E9A06">&apos;0x111002aa&apos;</font>: <font color="#06989A">[Function: bound _createTxObject]</font>,
+      <font color="#4E9A06">&apos;createTask(string)&apos;</font>: <font color="#06989A">[Function: bound _createTxObject]</font>
+    },
+    events: { allEvents: <font color="#06989A">[Function: bound ]</font> },
+    _address: <font color="#4E9A06">&apos;0x6589d7BD07CEA4f1F18f6e3A263605A802257B11&apos;</font>,
+    _jsonInterface: [ <font color="#06989A">[Object]</font>, <font color="#06989A">[Object]</font>, <font color="#06989A">[Object]</font>, <font color="#06989A">[Object]</font> ]
+  },
+  tasks: [Function (anonymous)] {
+    call: <font color="#06989A">[Function (anonymous)]</font>,
+    sendTransaction: <font color="#06989A">[Function (anonymous)]</font>,
+    estimateGas: <font color="#06989A">[Function (anonymous)]</font>,
+    request: <font color="#06989A">[Function (anonymous)]</font>
+  },
+  taskCount: [Function (anonymous)] {
+    call: <font color="#06989A">[Function (anonymous)]</font>,
+    sendTransaction: <font color="#06989A">[Function (anonymous)]</font>,
+    estimateGas: <font color="#06989A">[Function (anonymous)]</font>,
+    request: <font color="#06989A">[Function (anonymous)]</font>
+  },
+  createTask: [Function (anonymous)] {
+    call: <font color="#06989A">[Function (anonymous)]</font>,
+    sendTransaction: <font color="#06989A">[Function (anonymous)]</font>,
+    estimateGas: <font color="#06989A">[Function (anonymous)]</font>,
+    request: <font color="#06989A">[Function (anonymous)]</font>
+  },
+  sendTransaction: <font color="#06989A">[Function (anonymous)]</font>,
+  send: <font color="#06989A">[Function (anonymous)]</font>,
+  allEvents: <font color="#06989A">[Function (anonymous)]</font>,
+  getPastEvents: <font color="#06989A">[Function (anonymous)]</font>
+}
+truffle(development)&gt; todoList.address
+<font color="#4E9A06">&apos;0x6589d7BD07CEA4f1F18f6e3A263605A802257B11&apos;</font>
+truffle(development)&gt; 
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+truffle(development)&gt; 
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle test
+Using network &apos;development&apos;.
+
+
+
+  Contract: TodoList
+  <font color="#4E9A06">  ✓</font><font color="#555753"> deploys successfully</font>
+  <font color="#4E9A06">  ✓</font><font color="#555753"> lists tasks</font>
+
+
+<font color="#8AE234"> </font><font color="#4E9A06"> 2 passing</font><font color="#555753"> (75ms)</font>
+
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle test
+Using network &apos;development&apos;.
+
+Error parsing /home/mathangi/eth-todolist/contracts/TodoList.sol: ParsedContract.sol:16:19: ParserError: Expected &apos;(&apos; but got &apos;{&apos;
+ event TaskCreated{
+                  ^
+<font color="#CC0000">Compilation failed. See above.</font>
+Truffle v5.0.2 (core: 5.0.2)
+Node v15.14.0
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle test
+Using network &apos;development&apos;.
+
+Error parsing /home/mathangi/eth-todolist/contracts/TodoList.sol: ParsedContract.sol:17:14: ParserError: Expected &apos;,&apos; but got &apos;;&apos;
+      uint id;
+             ^
+<font color="#CC0000">Compilation failed. See above.</font>
+Truffle v5.0.2 (core: 5.0.2)
+Node v15.14.0
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle test
+Using network &apos;development&apos;.
+
+Compiling ./contracts/TodoList.sol...
+
+
+  Contract: TodoList
+  <font color="#4E9A06">  ✓</font><font color="#555753"> deploys successfully</font>
+  <font color="#4E9A06">  ✓</font><font color="#555753"> lists tasks</font>
+  <font color="#4E9A06">  ✓</font><font color="#555753"> creates tasks</font><font color="#CC0000"> (88ms)</font>
+
+
+<font color="#8AE234"> </font><font color="#4E9A06"> 3 passing</font><font color="#555753"> (143ms)</font>
+
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$  truffle migrate --reset
+Compiling ./contracts/TodoList.sol...
+Writing artifacts to ./build/contracts
+
+⚠️  Important ⚠️
+If you&apos;re using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+&gt; Network name:    &apos;development&apos;
+&gt; Network id:      5777
+&gt; Block gas limit: 6721975
+
+
+1_initial_migration.js
+======================
+
+   Deploying &apos;Migrations&apos;
+   ----------------------
+   &gt; transaction hash:    0x380763dea63d0ce91b6897108426be2180f9b1c8af46cc5fd8099fccf0116e49
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x5DBD8475505AB6B1e6de5A27AdC812264f96DEd0
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.96101988
+   &gt; gas used:            206601
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00413202 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00413202 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Replacing &apos;TodoList&apos;
+   --------------------
+   &gt; transaction hash:    0xe2165cd83d3b05da7ae3b4781ccccad4daeaa63e663171eced2e5312291eb774
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x83916145688395f2C1C90f502b7e704ba5ef66FE
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.95341872
+   &gt; gas used:            380058
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00760116 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00760116 ETH
+
+
+Summary
+=======
+&gt; Total deployments:   2
+&gt; Final cost:          0.01173318 ETH
+
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle compile
+Compiling ./contracts/TodoList.sol...
+Writing artifacts to ./build/contracts
+
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle migrate
+⚠️  Important ⚠️
+If you&apos;re using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+&gt; Network name:    &apos;development&apos;
+&gt; Network id:      5777
+&gt; Block gas limit: 6721975
+
+
+1_initial_migration.js
+======================
+
+   Deploying &apos;Migrations&apos;
+   ----------------------
+   &gt; transaction hash:    0xb7b6970a1278d0094e033cd90bdcd5825a00b49a12684e6ff0a15146dae8425c
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x1aa7eab1683daa6BD030E1183c15b2eDfC7103Ed
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.9492867
+   &gt; gas used:            206601
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00413202 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00413202 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Replacing &apos;TodoList&apos;
+   --------------------
+   &gt; transaction hash:    0x3128c352f8daed8f2e122a1780c8dc546a6556122f569af5f1ea21bcb998b1ad
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0xC65eB8600647F6156466DA4F124f7B405C067741
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.94168554
+   &gt; gas used:            380058
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00760116 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00760116 ETH
+
+
+Summary
+=======
+&gt; Total deployments:   2
+&gt; Final cost:          0.01173318 ETH
+
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle test
+Using network &apos;development&apos;.
+
+Compiling ./contracts/TodoList.sol...
+
+
+  Contract: TodoList
+  <font color="#4E9A06">  ✓</font><font color="#555753"> deploys successfully</font>
+  <font color="#4E9A06">  ✓</font><font color="#555753"> lists tasks</font>
+  <font color="#4E9A06">  ✓</font><font color="#555753"> creates tasks</font><font color="#C4A000"> (65ms)</font>
+  <font color="#4E9A06">  ✓</font><font color="#555753"> toggles task completion</font><font color="#C4A000"> (50ms)</font>
+
+
+<font color="#8AE234"> </font><font color="#4E9A06"> 4 passing</font><font color="#555753"> (176ms)</font>
+
+<font color="#4E9A06"><b>mathangi@mathangi</b></font>:<font color="#3465A4"><b>~/eth-todolist</b></font>$ truffle migrate --reset
+Compiling ./contracts/TodoList.sol...
+Writing artifacts to ./build/contracts
+
+⚠️  Important ⚠️
+If you&apos;re using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+&gt; Network name:    &apos;development&apos;
+&gt; Network id:      5777
+&gt; Block gas limit: 6721975
+
+
+1_initial_migration.js
+======================
+
+   Deploying &apos;Migrations&apos;
+   ----------------------
+   &gt; transaction hash:    0x14c8d8b0b81262b4b787935181f907b1bf6ef61e0c9fc7f4a5a1107c63c13b8b
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0x26772721F4fD13CB4E0C5c33C2d2BF9cB7D5576d
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.91587184
+   &gt; gas used:            206601
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00413202 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00413202 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Replacing &apos;TodoList&apos;
+   --------------------
+   &gt; transaction hash:    0x385f742514b8255564a38b3c148e7fdc0ee4f7625166dd4858c8d09758b8f175
+   &gt; Blocks: 0            Seconds: 0
+   &gt; contract address:    0xE39C5CDeb8b65AF46Be932B8fB276ddDe2CE6Da4
+   &gt; account:             0xefb4255184B92D157d88A9e2030EFC7562C435b6
+   &gt; balance:             99.90636646
+   &gt; gas used:            475269
+   &gt; gas price:           20 gwei
+   &gt; value sent:          0 ETH
+   &gt; total cost:          0.00950538 ETH
+
+   &gt; Saving artifacts
+   -------------------------------------
+   &gt; Total cost:          0.00950538 ETH
+
+
+Summary
+=======
+&gt; Total deployments:   2
+&gt; Final cost:          0.0136374 ETH
+</pre>
